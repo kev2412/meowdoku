@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#25212d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4efe8" media="(prefers-color-scheme: light)">
+<title>Meowdoku</title>
+<meta name="apple-mobile-web-app-title" content="Meowdoku">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%221%22%20y%3D%221%22%20width%3D%2230%22%20height%3D%2230%22%20rx%3D%228%22%20fill%3D%22%23f4a259%22%20stroke%3D%22%23d9822b%22%20stroke-opacity%3D%22.5%22%3E%3C%2Frect%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M4%2013L5%203.5L13%207.5Z%22%20fill%3D%22%23d9822b%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M28%2013L27%203.5L19%207.5Z%22%20fill%3D%22%23d9822b%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M6.2%2010.4L6.7%206.4L10.2%208.2Z%22%20fill%3D%22%23e58a9b%22%20opacity%3D%22.75%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M25.8%2010.4L25.3%206.4L21.8%208.2Z%22%20fill%3D%22%23e58a9b%22%20opacity%3D%22.75%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M16%206.5v4M13.7%207.4v3M18.3%207.4v3%22%20stroke%3D%22%23d9822b%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M9%2017.6q2.5-3.2%205%200M18%2017.6q2.5-3.2%205%200%22%20stroke%3D%22%232b2118%22%20stroke-width%3D%221.7%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M14.6%2020.4h2.8l-1.4%201.8z%22%20fill%3D%22%23e58a9b%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M16%2022.2q-1.6%202-3.4%201M16%2022.2q1.6%202%203.4%201%22%20stroke%3D%22%232b2118%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M4.5%2020.5l5.5.9M4.5%2024l5.5-.9M27.5%2020.5l-5.5.9M27.5%2024l-5.5-.9%22%20stroke%3D%22%232b2118%22%20stroke-opacity%3D%22.35%22%20stroke-width%3D%22.8%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%0A%20%20%20%20%3C%2Fsvg%3E">
+<style>
+  :root {
+    --bg: #25212d;
+    --panel: #2e2a36;
+    --cell-a: #3d3846;
+    --cell-b: #353040;
+    --text: #f3ede4;
+    --muted: #a79fb3;
+    --ok: #7fd99a;
+    --bad: #ff6b6b;
+    --edge: #4a4357;
+    --scrim: rgba(20, 17, 26, .82);
+    color-scheme: dark light;
+    --board: min(94vw, 58dvh, 520px);
+    --mini: calc(var(--board) / 9 * 0.6);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f4efe8; --panel: #e7dfd3; --cell-a: #dcd2c4; --cell-b: #d2c7b8;
+      --text: #2b2430; --muted: #6a6072; --ok: #2f9e5a; --bad: #d94b4b;
+      --edge: #c4b8a8; --scrim: rgba(244, 239, 232, .88);
+    }
+    /* black-translucent zeichnet die Statusleiste immer weiß: dunkler Streifen dahinter */
+    body::before {
+      content: ''; position: fixed; top: 0; left: 0; right: 0; z-index: 30;
+      height: env(safe-area-inset-top); background: #25212d; pointer-events: none;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    overscroll-behavior: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: none;
+  }
+  #app {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: calc(env(safe-area-inset-top) + 12px) 12px calc(env(safe-area-inset-bottom) + 16px);
+  }
+  header { width: var(--board); display: flex; align-items: flex-end; justify-content: space-between; gap: 8px; }
+  .stat { display: flex; flex-direction: column; }
+  .stat small { color: var(--muted); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; }
+  .stat strong { font-size: 28px; font-variant-numeric: tabular-nums; letter-spacing: -.01em; line-height: 1.1; }
+  .stat.combo strong { font-size: 20px; }
+  button {
+    font: inherit; color: var(--text); background: var(--panel);
+    border: 1px solid var(--edge); border-radius: 12px; padding: 8px 14px; cursor: pointer;
+  }
+  button:focus-visible { outline: 2px solid var(--ok); outline-offset: 2px; }
+  /* Fokusrahmen nur bei Tastaturbedienung */
+  button:focus:not(:focus-visible), #board:focus:not(:focus-visible) { outline: none; }
+  #board:focus-visible { outline: 3px solid var(--ok); outline-offset: 4px; border-radius: 16px; }
+  .icon-btn { width: 40px; height: 40px; padding: 0; display: grid; place-items: center; }
+  .icon-btn span { font-size: 18px; font-weight: 700; line-height: 1; }
+  #mute .slash { display: none; }
+  #mute.is-muted .waves { display: none; }
+  #mute.is-muted .slash { display: inline; }
+
+  #board {
+    width: var(--board); height: var(--board);
+    display: grid; grid-template-columns: repeat(9, 1fr); grid-template-rows: repeat(9, 1fr);
+    gap: 2px; padding: 4px; background: var(--panel); border-radius: 16px;
+    touch-action: none;
+  }
+  .cell { border-radius: 6px; background: var(--cell-a); position: relative; min-width: 0; min-height: 0; }
+  .cell.alt { background: var(--cell-b); }
+  .cell svg { width: 100%; height: 100%; display: block; }
+  /* Vorschau: reine Klassen auf den festen Zellen (kein innerHTML, keine neuen Knoten) */
+  .cell.pv-ok, .cell.pv-bad { outline: 2px solid var(--ok); outline-offset: -2px; }
+  .cell.pv-bad { outline-color: var(--bad); }
+  .cell.pv-ok::after, .cell.pv-bad::after { content: ''; position: absolute; inset: 0; border-radius: inherit; }
+  .cell.pv-ok::after { background: var(--ghost); opacity: .6; }
+  .cell.pv-bad::after { background: var(--bad); opacity: .35; }
+  .pv-c0 { --ghost: #f4a259; } .pv-c1 { --ghost: #8fa3b8; } .pv-c2 { --ghost: #f2efe9; }
+  .pv-c3 { --ghost: #7b6a9b; } .pv-c4 { --ghost: #8fcf9a; } .pv-c5 { --ghost: #ee7f9c; }
+
+  #msg { min-height: 1.4em; color: var(--muted); font-size: 15px; text-align: center; }
+
+  #tray { width: var(--board); display: flex; justify-content: space-between; gap: 8px; touch-action: none; }
+  .slot {
+    flex: 1; aspect-ratio: 1 / 0.85; display: flex; align-items: center; justify-content: center;
+    padding: 6px; border-radius: 16px; background: var(--panel); border: 2px solid transparent;
+  }
+  .slot.selected { border-color: var(--ok); }
+  .slot:not(:disabled) { cursor: grab; }
+  .slot.lifted .piece { opacity: 0; }
+  .slot.dead { opacity: .45; }
+  .slot:disabled { opacity: .2; cursor: default; }
+  .piece { display: grid; gap: 2px; }
+  .piece > div { width: var(--mini); height: var(--mini); }
+  .piece svg { width: 100%; height: 100%; display: block; }
+
+  .float {
+    position: fixed; left: 0; top: 0; display: grid; pointer-events: none; z-index: 10;
+    transform-origin: 0 0;
+    filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .35));
+  }
+  .float > div { min-width: 0; min-height: 0; }
+  /* Touch: kein Filter auf dem bewegten Layer (Safari), stattdessen schmaler statischer Schatten je Kachel */
+  @media (pointer: coarse) {
+    .float { filter: none; }
+    .float > div { border-radius: 25%; box-shadow: 0 3px 3px -1px rgba(0, 0, 0, .3); }
+  }
+  .float svg { width: 100%; height: 100%; display: block; }
+
+  #fx { position: fixed; inset: 0; pointer-events: none; z-index: 15; }
+  .pop { position: absolute; left: 0; top: 0; }
+  .pop svg { width: 100%; height: 100%; display: block; }
+  .score-pop {
+    position: absolute; left: 0; top: 0; white-space: nowrap; text-align: center;
+    font-weight: 800; font-variant-numeric: tabular-nums; color: var(--text);
+    text-shadow: 0 0 8px var(--bg), 0 0 2px var(--bg);
+  }
+  .score-pop b { display: block; font-size: 34px; letter-spacing: -.02em; line-height: 1.05; }
+  .score-pop small { display: block; font-size: 14px; letter-spacing: .01em; color: var(--ok); }
+
+  #over {
+    z-index: 20;
+    position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 12px; background: var(--scrim); text-align: center;
+  }
+  #over[hidden] { display: none; }
+  #over h2 { margin: 0; font-size: 34px; letter-spacing: -.02em; }
+  #over p { margin: 0; color: var(--muted); }
+
+  #help-overlay {
+    z-index: 25; position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+    padding: calc(env(safe-area-inset-top) + 16px) 16px calc(env(safe-area-inset-bottom) + 16px);
+    background: var(--scrim);
+  }
+  #help-overlay[hidden] { display: none; }
+  .card {
+    width: min(100%, 420px); max-height: 100%; overflow: auto; padding: 22px; text-align: left;
+    border-radius: 20px; background: var(--panel); border: 1px solid var(--edge);
+  }
+  .card h2 { margin: 0 0 12px; font-size: 24px; letter-spacing: -.02em; line-height: 1.15; }
+  .card ul { margin: 0 0 18px; padding-left: 1.1em; font-size: 15px; line-height: 1.45; }
+  .card li + li { margin-top: 8px; }
+  .card .close { width: 100%; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs id="cat-defs"></defs></svg>
+
+<div id="app">
+  <header>
+    <div class="stat"><small>Punkte</small><strong id="score">0</strong></div>
+    <div class="stat combo"><small>Serie</small><strong id="combo">0</strong></div>
+    <div class="stat"><small>Best</small><strong id="best">0</strong></div>
+    <button id="mute" class="icon-btn" type="button" aria-pressed="false" aria-label="Ton stumm schalten">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/>
+        <g class="waves"><path d="M15.5 9.2a4 4 0 0 1 0 5.6M18 6.8a7.5 7.5 0 0 1 0 10.4"/></g>
+        <path class="slash" d="M16 9.5l5 5M21 9.5l-5 5"/>
+      </svg>
+    </button>
+    <button id="help" class="icon-btn" type="button" aria-label="Spielregeln" aria-haspopup="dialog" aria-controls="help-overlay"><span aria-hidden="true">?</span></button>
+    <button id="restart" type="button">Neu</button>
+  </header>
+
+  <div id="board" role="grid" aria-label="Spielfeld 9 mal 9" tabindex="-1"></div>
+
+  <div>
+    <div id="msg" role="status" aria-live="polite"></div>
+  </div>
+
+  <div id="tray" aria-label="Vorrat"></div>
+</div>
+
+<div id="fx" aria-hidden="true"></div>
+
+<div id="help-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="help-title">
+  <div class="card">
+    <h2 id="help-title">So spielst du Meowdoku</h2>
+    <ul>
+      <li>Ziehe Steine aus dem Vorrat aufs Feld. Jede belegte Zelle gibt <b>1 Punkt</b>.</li>
+      <li>Volle Zeilen, Spalten und 3×3-Blöcke lösen sich auf. Bei <b>n</b> gleichzeitig gibt es <b>10 · n²</b> Punkte (1 → 10, 2 → 40, 3 → 90).</li>
+      <li><b>Kombo:</b> Löst du in aufeinanderfolgenden Zügen etwas auf, steigt der Multiplikator um 0,5 je Zug (×1,5, ×2, …). Ein Zug ohne Auflösung beendet die Serie.</li>
+      <li>Neue Steine kommen, wenn alle 3 gesetzt sind. Passt kein Stein mehr aufs Feld, ist das Spiel vorbei.</li>
+      <li><b>Tastatur:</b> Tab zum Stein, Enter wählt ihn, Pfeiltasten bewegen, Enter oder Leertaste setzt, Escape bricht ab.</li>
+    </ul>
+    <button id="help-close" class="close" type="button">Verstanden</button>
+  </div>
+</div>
+
+<div id="over" hidden role="alertdialog" aria-labelledby="over-title">
+  <h2 id="over-title">Game Over</h2>
+  <p id="over-score"></p>
+  <button id="over-restart" type="button">Neues Spiel</button>
+</div>
+
+<!-- ============================================================
+     SPIELLOGIK: reine Funktionen, kein DOM-Zugriff
+     ============================================================ -->
+<script id="logic">
+const MeowLogic = (() => {
+  'use strict';
+
+  const SIZE = 9;
+  const BLOCK = 3;
+  const TRAY_SIZE = 3;
+  const CLEAR_UNIT_POINTS = 10;   // Punkte je n^2 aufgelöster Einheiten
+  const STREAK_STEP = 0.5;        // Zusatz-Multiplikator je weiterer Kombo-Stufe
+
+  const RAW_PIECES = [
+    { id: 'quadrat',  name: 'Quadrat',          cells: [[0,0],[0,1],[1,0],[1,1]] },
+    { id: 'linie',    name: 'Linie',            cells: [[0,0],[0,1],[0,2]] },
+    { id: 'l',        name: 'L-Winkel',         cells: [[0,0],[1,0],[2,0],[2,1]] },
+    { id: 't',        name: 'T-Form',           cells: [[0,0],[0,1],[0,2],[1,1]] },
+    { id: 'domino',   name: 'Domino',           cells: [[0,0],[1,0]] },
+    { id: 'ecke',     name: 'Ecke',             cells: [[0,0],[1,0],[1,1]] },
+  ];
+
+  // cat = Katzen-ID = Index (identisch zum Piece-Index), wird im Board gespeichert
+  const PIECES = Object.freeze(RAW_PIECES.map((p, i) => Object.freeze({
+    id: p.id,
+    name: p.name,
+    cat: i,
+    cells: Object.freeze(p.cells.map(c => Object.freeze([c[0], c[1]]))),
+    h: Math.max(...p.cells.map(c => c[0])) + 1,
+    w: Math.max(...p.cells.map(c => c[1])) + 1,
+  })));
+
+  const inBounds = (r, c) =>
+    Number.isInteger(r) && Number.isInteger(c) && r >= 0 && r < SIZE && c >= 0 && c < SIZE;
+
+  const emptyBoard = () => Array.from({ length: SIZE }, () => Array(SIZE).fill(null));
+
+  const canPlace = (board, cells, r, c) =>
+    cells.every(([dr, dc]) => inBounds(r + dr, c + dc) && board[r + dr][c + dc] === null);
+
+  const fitsAnywhere = (board, cells) => {
+    for (let r = 0; r < SIZE; r++)
+      for (let c = 0; c < SIZE; c++)
+        if (canPlace(board, cells, r, c)) return true;
+    return false;
+  };
+
+  // Gibt ein neues Board zurück; wirft bei ungültiger Platzierung (Programmierfehler).
+  const placeCells = (board, cells, r, c, cat) => {
+    if (!canPlace(board, cells, r, c)) throw new Error('Ungültige Platzierung');
+    const next = board.map(row => row.slice());
+    for (const [dr, dc] of cells) next[r + dr][c + dc] = cat;
+    return next;
+  };
+
+  // Erkennt vollständige Zeilen, Spalten, 3x3-Blöcke auf dem unveränderten Board.
+  // Alle betroffenen Zellen landen in EINEM Set -> Schnittpunkte werden nur einmal gezählt.
+  const findCompleted = (board) => {
+    const rows = [], cols = [], blocks = [];
+    const set = new Set();
+    for (let i = 0; i < SIZE; i++) {
+      if (board[i].every(v => v !== null)) {
+        rows.push(i);
+        for (let c = 0; c < SIZE; c++) set.add(i * SIZE + c);
+      }
+      let colFull = true;
+      for (let r = 0; r < SIZE; r++) if (board[r][i] === null) { colFull = false; break; }
+      if (colFull) {
+        cols.push(i);
+        for (let r = 0; r < SIZE; r++) set.add(r * SIZE + i);
+      }
+    }
+    for (let b = 0; b < SIZE; b++) {
+      const r0 = Math.floor(b / BLOCK) * BLOCK, c0 = (b % BLOCK) * BLOCK;
+      let full = true;
+      for (let r = r0; r < r0 + BLOCK && full; r++)
+        for (let c = c0; c < c0 + BLOCK; c++) if (board[r][c] === null) { full = false; break; }
+      if (full) {
+        blocks.push(b);
+        for (let r = r0; r < r0 + BLOCK; r++)
+          for (let c = c0; c < c0 + BLOCK; c++) set.add(r * SIZE + c);
+      }
+    }
+    const cells = [...set].sort((a, b) => a - b).map(i => [Math.floor(i / SIZE), i % SIZE]);
+    return { rows, cols, blocks, cells, units: rows.length + cols.length + blocks.length };
+  };
+
+  const clearCells = (board, cells) => {
+    const next = board.map(row => row.slice());
+    for (const [r, c] of cells) next[r][c] = null;
+    return next;
+  };
+
+  const streakMultiplier = (streak) => (streak <= 0 ? 1 : 1 + STREAK_STEP * (streak - 1));
+
+  // streak = Streak-Wert NACH diesem Zug (0 = keine Auflösung)
+  const scoreMove = (placed, units, streak) => {
+    const multiplier = streakMultiplier(streak);
+    const clearPoints = units > 0 ? Math.round(CLEAR_UNIT_POINTS * units * units * multiplier) : 0;
+    return { placePoints: placed, clearPoints, multiplier, total: placed + clearPoints };
+  };
+
+  const drawTray = (rng) =>
+    Array.from({ length: TRAY_SIZE }, () => Math.min(Math.floor(rng() * PIECES.length), PIECES.length - 1));
+
+  const hasAnyMove = (board, tray) =>
+    tray.some(id => id !== null && fitsAnywhere(board, PIECES[id].cells));
+
+  // Prüft einen gespeicherten Spielstand (z. B. aus JSON) und gibt einen sauberen State oder null zurück.
+  const restoreState = (raw) => {
+    if (!raw || typeof raw !== 'object') return null;
+    const { board, tray, score, streak } = raw;
+    const isCat = (v) => Number.isInteger(v) && v >= 0 && v < PIECES.length;
+    if (!Array.isArray(board) || board.length !== SIZE) return null;
+    for (const row of board) {
+      if (!Array.isArray(row) || row.length !== SIZE) return null;
+      if (!row.every((v) => v === null || isCat(v))) return null;
+    }
+    if (!Array.isArray(tray) || tray.length !== TRAY_SIZE) return null;
+    if (!tray.every((v) => v === null || isCat(v)) || tray.every((v) => v === null)) return null;
+    if (!Number.isSafeInteger(score) || score < 0) return null;
+    if (!Number.isSafeInteger(streak) || streak < 0) return null;
+    const next = { board: board.map((row) => row.slice()), tray: tray.slice(), score, streak, gameOver: false };
+    if (findCompleted(next.board).units > 0) return null;   // nach jedem Zug sind volle Einheiten geleert
+    if (!hasAnyMove(next.board, next.tray)) return null;    // Game Over wird nicht fortgesetzt
+    return next;
+  };
+
+  const createGame = (rng) => ({
+    board: emptyBoard(),
+    tray: drawTray(rng),   // Piece-Indizes, null = bereits gesetzt
+    score: 0,
+    streak: 0,
+    gameOver: false,
+  });
+
+  // Gibt { ok:false, reason } oder { ok:true, state, info } zurück. Der Eingabe-State wird nie mutiert.
+  const applyMove = (state, slot, r, c, rng) => {
+    if (state.gameOver) return { ok: false, reason: 'game-over' };
+    if (!Number.isInteger(slot) || slot < 0 || slot >= TRAY_SIZE || state.tray[slot] === null)
+      return { ok: false, reason: 'empty-slot' };
+    const piece = PIECES[state.tray[slot]];
+    if (!canPlace(state.board, piece.cells, r, c)) return { ok: false, reason: 'invalid-placement' };
+
+    const placedBoard = placeCells(state.board, piece.cells, r, c, piece.cat);
+    const done = findCompleted(placedBoard);
+    const board = done.units > 0 ? clearCells(placedBoard, done.cells) : placedBoard;
+
+    const streak = done.units > 0 ? state.streak + 1 : 0;
+    const pts = scoreMove(piece.cells.length, done.units, streak);
+
+    let tray = state.tray.slice();
+    tray[slot] = null;
+    const refilled = tray.every(id => id === null);
+    if (refilled) tray = drawTray(rng);
+
+    const next = {
+      board,
+      tray,
+      score: state.score + pts.total,
+      streak,
+      gameOver: !hasAnyMove(board, tray),
+    };
+    return {
+      ok: true,
+      state: next,
+      info: {
+        placed: piece.cells.length,
+        clearedCells: done.cells,
+        units: { rows: done.rows.length, cols: done.cols.length, blocks: done.blocks.length, total: done.units },
+        streak,
+        multiplier: pts.multiplier,
+        gained: pts.total,
+        refilled,
+      },
+    };
+  };
+
+  return Object.freeze({
+    SIZE, BLOCK, TRAY_SIZE, PIECES,
+    inBounds, emptyBoard, canPlace, fitsAnywhere, placeCells,
+    findCompleted, clearCells, streakMultiplier, scoreMove,
+    drawTray, hasAnyMove, createGame, applyMove, restoreState,
+  });
+})();
+</script>
+
+<!-- ============================================================
+     DARSTELLUNG & EINGABE: DOM, SVG, Klick-Steuerung
+     ============================================================ -->
+<script id="ui">
+(() => {
+  'use strict';
+  const L = MeowLogic;
+  const N = L.SIZE;
+
+  // ---- Katzen-SVGs (eingebettet, ein <symbol> je Katze) ----
+  // Unterscheidbar über Ohrenform, Gesichtsausdruck UND Farbe (nicht nur über die Farbe).
+  const INK = '#2b2118', PINK = '#e58a9b', MOUTH = '#7a2d3a';
+  const stroke = (d, w = 1.7) => `<path d="${d}" stroke="${INK}" stroke-width="${w}" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+  const nose = `<path d="M14.6 20.4h2.8l-1.4 1.8z" fill="${PINK}"/>`;
+  const smile = stroke('M16 22.2q-1.6 2-3.4 1M16 22.2q1.6 2 3.4 1', 1);
+  const whiskers = `<path d="M4.5 20.5l5.5.9M4.5 24l5.5-.9M27.5 20.5l-5.5.9M27.5 24l-5.5-.9" stroke="${INK}" stroke-opacity=".35" stroke-width=".8" stroke-linecap="round"/>`;
+  const eye = (cx, cy, r) => `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${INK}"/><circle cx="${cx + 0.9}" cy="${cy - 0.9}" r="${r * 0.35}" fill="#fff"/>`;
+  const inner = (d) => `<path d="${d}" fill="${PINK}" opacity=".75"/>`;
+
+  const CATS = [
+    // 0 Mochi: Tigerkatze, spitze Ohren, Stirnstreifen, fröhliche Bogenaugen
+    { name: 'Mochi', fill: '#f4a259', dark: '#d9822b', art: (c) =>
+      `<path d="M4 13L5 3.5L13 7.5Z" fill="${c.dark}"/><path d="M28 13L27 3.5L19 7.5Z" fill="${c.dark}"/>` +
+      inner('M6.2 10.4L6.7 6.4L10.2 8.2Z') + inner('M25.8 10.4L25.3 6.4L21.8 8.2Z') +
+      `<path d="M16 6.5v4M13.7 7.4v3M18.3 7.4v3" stroke="${c.dark}" stroke-width="1.8" stroke-linecap="round"/>` +
+      stroke('M9 17.6q2.5-3.2 5 0M18 17.6q2.5-3.2 5 0') + nose + smile + whiskers },
+    // 1 Luna: runde Ohren, große Kulleraugen, heller Schnauzenfleck
+    { name: 'Luna', fill: '#8fa3b8', dark: '#6b7f95', art: (c) =>
+      `<path d="M4.5 13Q3.2 4.2 6.8 3.6Q10.8 3.4 13 7.8Z" fill="${c.dark}"/><path d="M27.5 13Q28.8 4.2 25.2 3.6Q21.2 3.4 19 7.8Z" fill="${c.dark}"/>` +
+      inner('M6.4 10.5Q5.8 6.2 7.4 6Q9.4 6.2 10.4 8.6Z') + inner('M25.6 10.5Q26.2 6.2 24.6 6Q22.6 6.2 21.6 8.6Z') +
+      `<ellipse cx="16" cy="22.6" rx="5.2" ry="3.4" fill="#fff" opacity=".35"/>` +
+      eye(11.5, 16.4, 2.9) + eye(20.5, 16.4, 2.9) + nose + smile + whiskers },
+    // 2 Schnee: Knickohren, rosa Bäckchen, schläfrige Augen
+    { name: 'Schnee', fill: '#f2efe9', dark: '#cfc8bb', art: (c) =>
+      `<path d="M4 12.5L4.6 5.4L9 4.6L12.8 7.4Z" fill="${c.dark}"/><path d="M28 12.5L27.4 5.4L23 4.6L19.2 7.4Z" fill="${c.dark}"/>` +
+      `<path d="M5 6.4Q8 6.6 9.4 9.4M27 6.4Q24 6.6 22.6 9.4" stroke="#fff" stroke-opacity=".75" stroke-width="1" fill="none" stroke-linecap="round"/>` +
+      `<circle cx="8" cy="21" r="2.6" fill="#f5a3b5" opacity=".8"/><circle cx="24" cy="21" r="2.6" fill="#f5a3b5" opacity=".8"/>` +
+      stroke('M9 16.2q2.5 2.8 5 0M18 16.2q2.5 2.8 5 0') + nose + stroke('M14.6 22.6q1.4 1.2 2.8 0', 1) },
+    // 3 Nacht: hohe Pinselohren, gelbe Schlitzaugen, schiefes Grinsen
+    { name: 'Nacht', fill: '#7b6a9b', dark: '#5b4b78', art: (c) =>
+      `<path d="M3.5 13.5L3.8 2.2L13 8Z" fill="${c.dark}"/><path d="M28.5 13.5L28.2 2.2L19 8Z" fill="${c.dark}"/>` +
+      `<path d="M3.8 2.2L2.6 .8M28.2 2.2L29.4 .8" stroke="${c.dark}" stroke-width="1.4" stroke-linecap="round"/>` +
+      `<path d="M5.8 11L5.9 6.2L10 8.6Z" fill="#b9a6e0" opacity=".7"/><path d="M26.2 11L26.1 6.2L22 8.6Z" fill="#b9a6e0" opacity=".7"/>` +
+      `<circle cx="24" cy="24.5" r="3.4" fill="${c.dark}" opacity=".7"/>` +
+      `<ellipse cx="11.5" cy="16.5" rx="2.7" ry="2.9" fill="#ffd84d"/><ellipse cx="20.5" cy="16.5" rx="2.7" ry="2.9" fill="#ffd84d"/>` +
+      `<ellipse cx="11.5" cy="16.5" rx=".8" ry="2.3" fill="${INK}"/><ellipse cx="20.5" cy="16.5" rx=".8" ry="2.3" fill="${INK}"/>` +
+      stroke('M8.2 12.8l5.2 1.6M23.8 12.8l-5.2 1.6', 1.4) + nose + stroke('M13 22.8q3 1.8 6.4-.6', 1) + whiskers },
+    // 4 Pistazie: ein Ohr geknickt, Zwinkern, Zunge raus
+    { name: 'Pistazie', fill: '#8fcf9a', dark: '#62a66f', art: (c) =>
+      `<path d="M4 13L5 3.5L13 7.5Z" fill="${c.dark}"/><path d="M28 12.5Q31 8.5 26.8 5.6Q22.6 6.2 19.6 8.2Z" fill="${c.dark}"/>` +
+      inner('M6.2 10.4L6.7 6.4L10.2 8.2Z') +
+      `<path d="M16 6c1.1 2.2 1.5 4.2 0 6.6c-1.5-2.4-1.1-4.4 0-6.6z" fill="#fff" opacity=".75"/>` +
+      eye(11.5, 16.6, 2.6) + stroke('M18 17.4q2.5-3 5 0') + nose +
+      `<path d="M13.4 22.4q2.6 3.6 5.2 0z" fill="${MOUTH}"/><ellipse cx="16" cy="24" rx="1.7" ry="1.1" fill="${PINK}"/>` },
+    // 5 Himbeer: spitze Ohren mit hellem Innenohr, Herz auf der Stirn, staunender Mund
+    { name: 'Himbeer', fill: '#ee7f9c', dark: '#c85878', art: (c) =>
+      `<path d="M4 13L5 3.5L13 7.5Z" fill="${c.dark}"/><path d="M28 13L27 3.5L19 7.5Z" fill="${c.dark}"/>` +
+      `<path d="M6.2 10.4L6.7 6.4L10.2 8.2Z" fill="#fff" opacity=".5"/><path d="M25.8 10.4L25.3 6.4L21.8 8.2Z" fill="#fff" opacity=".5"/>` +
+      `<path d="M16 10.6c-1.3-1.8-3.6-.2-1.9 1.6l1.9 1.7l1.9-1.7c1.7-1.8-.6-3.4-1.9-1.6z" fill="#fff" opacity=".85"/>` +
+      `<ellipse cx="16" cy="23.8" rx="5.5" ry="3.4" fill="#fff" opacity=".55"/>` +
+      eye(11.5, 17.2, 2.7) + eye(20.5, 17.2, 2.7) +
+      `<circle cx="10.7" cy="18.2" r=".5" fill="#fff"/><circle cx="19.7" cy="18.2" r=".5" fill="#fff"/>` +
+      nose + `<ellipse cx="16" cy="24.4" rx="1.3" ry="1.6" fill="${MOUTH}"/>` + whiskers },
+  ];
+  document.getElementById('cat-defs').innerHTML = CATS.map((cat, i) => `
+    <symbol id="cat-${i}" viewBox="0 0 32 32">
+      <rect x="1" y="1" width="30" height="30" rx="8" fill="${cat.fill}" stroke="${cat.dark}" stroke-opacity=".5"/>
+      ${cat.art(cat)}
+    </symbol>`).join('');
+  const catSvg = (i) => `<svg viewBox="0 0 32 32" aria-hidden="true"><use href="#cat-${i}"/></svg>`;
+
+  // ---- UI-Zustand ----
+  const rng = Math.random;
+  const STATE_KEY = 'meowdoku.state';
+  const loadState = () => {
+    try {
+      const saved = L.restoreState(JSON.parse(localStorage.getItem(STATE_KEY)));
+      if (saved) return saved;
+    } catch (_) { /* kaputte oder gesperrte Daten: neues Spiel */ }
+    return L.createGame(rng);
+  };
+  let state = loadState();
+  const saveState = () => {
+    try {
+      if (state.gameOver) localStorage.removeItem(STATE_KEY);
+      else localStorage.setItem(STATE_KEY, JSON.stringify({ v: 1, board: state.board, tray: state.tray, score: state.score, streak: state.streak }));
+    } catch (_) { /* Speicher gesperrt */ }
+  };
+  const clearSavedState = () => { try { localStorage.removeItem(STATE_KEY); } catch (_) { /* ignorieren */ } };
+  let selected = null;      // Tray-Slot-Index oder null
+  let hover = null;         // { r, c } oder null
+  let best = 0;
+  try { best = Number(localStorage.getItem('meowdoku.best')) || 0; } catch (_) { /* Speicher gesperrt */ }
+  let muted = false;
+  try { muted = localStorage.getItem('meowdoku.muted') === '1'; } catch (_) { /* Speicher gesperrt */ }
+
+  const $ = (id) => document.getElementById(id);
+  const boardEl = $('board'), trayEl = $('tray'), msgEl = $('msg');
+
+  // ---- Board einmalig aufbauen ----
+  const cellEls = [];
+  for (let r = 0; r < N; r++) {
+    for (let c = 0; c < N; c++) {
+      const el = document.createElement('div');
+      el.dataset.r = r; el.dataset.c = c;
+      el.className = 'cell' + ((Math.floor(r / L.BLOCK) + Math.floor(c / L.BLOCK)) % 2 === 1 ? ' alt' : '');
+      el.setAttribute('role', 'gridcell');
+      cellEls.push(el);
+      boardEl.appendChild(el);
+    }
+  }
+  // Raster: genau 81 feste Zellen. Katzen werden nur bei Änderung gesetzt (einmal pro Zug);
+  // die Vorschau beim Ziehen schaltet ausschließlich CSS-Klassen um (kein innerHTML, keine neuen Knoten).
+  const drawn = new Array(N * N).fill(undefined);
+  const renderBoard = () => {
+    for (let r = 0; r < N; r++) {
+      for (let c = 0; c < N; c++) {
+        const i = r * N + c, cat = state.board[r][c];
+        if (drawn[i] === cat) continue;
+        drawn[i] = cat;
+        const el = cellEls[i];
+        el.innerHTML = cat !== null ? catSvg(cat) : '';
+        el.setAttribute('aria-label',
+          `Reihe ${r + 1}, Spalte ${c + 1}, ${cat !== null ? 'Katze ' + CATS[cat].name : 'leer'}`);
+      }
+    }
+  };
+
+  let ghostEls = [], ghostClasses = [];
+  const hideGhost = () => {
+    for (const el of ghostEls) el.classList.remove(...ghostClasses);
+    ghostEls = [];
+  };
+  const showGhost = (piece, r, c, ok) => {
+    hideGhost();
+    ghostClasses = ok ? ['pv-ok', `pv-c${piece.cat}`] : ['pv-bad'];
+    ghostEls = piece.cells.map(([dr, dc]) => cellEls[(r + dr) * N + c + dc]);
+    for (const el of ghostEls) el.classList.add(...ghostClasses);
+  };
+
+  const renderTray = () => {
+    trayEl.innerHTML = '';
+    state.tray.forEach((id, slot) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'slot';
+      btn.dataset.slot = slot;
+      if (id === null) {
+        btn.disabled = true;
+        btn.setAttribute('aria-label', 'Leer');
+      } else {
+        const piece = L.PIECES[id];
+        if (slot === selected) btn.classList.add('selected');
+        if (lifted.has(slot)) btn.classList.add('lifted');
+        if (!L.fitsAnywhere(state.board, piece.cells)) btn.classList.add('dead');
+        btn.setAttribute('aria-label', `${piece.name}, ${CATS[piece.cat].name}`);
+        btn.setAttribute('aria-pressed', String(slot === selected));
+        const grid = document.createElement('div');
+        grid.className = 'piece';
+        grid.style.gridTemplateColumns = `repeat(${piece.w}, var(--mini))`;
+        grid.style.gridTemplateRows = `repeat(${piece.h}, var(--mini))`;
+        for (const [dr, dc] of piece.cells) {
+          const cell = document.createElement('div');
+          cell.style.gridRow = dr + 1;
+          cell.style.gridColumn = dc + 1;
+          cell.innerHTML = catSvg(piece.cat);
+          grid.appendChild(cell);
+        }
+        btn.appendChild(grid);
+      }
+      trayEl.appendChild(btn);
+    });
+  };
+
+  const renderStats = () => {
+    $('score').textContent = state.score;
+    $('best').textContent = best;
+    $('combo').textContent = state.streak;
+    $('over').hidden = !state.gameOver;
+    if (state.gameOver) {
+      $('over-score').textContent = `Punkte: ${state.score}`;
+      $('over-restart').focus({ preventScroll: true });
+    }
+  };
+
+  const render = () => { renderBoard(); renderTray(); renderStats(); };
+  const say = (text) => { msgEl.textContent = text; };
+
+  // ---- Sound: synthetisiert (Web Audio API), iOS-tauglich entsperrt ----
+  const Sound = (() => {
+    let ctx = null, master = null, off = false;
+    const ready = () => !off && ctx !== null && ctx.state === 'running';
+
+    // Entsperren: beim ersten pointerdown; iOS zählt teils erst pointerup als Geste -> zweiter Versuch
+    const unlock = () => {
+      if (ctx && ctx.state === 'running') {
+        window.removeEventListener('pointerdown', unlock, true);
+        window.removeEventListener('pointerup', unlock, true);
+        window.removeEventListener('keydown', unlock, true);
+        return;
+      }
+      try {
+        if (!ctx) {
+          const AC = window.AudioContext || window.webkitAudioContext;
+          if (!AC) return;
+          ctx = new AC();
+          master = ctx.createGain();
+          master.gain.value = 0.6;
+          master.connect(ctx.destination);
+        }
+        const p = ctx.resume();
+        if (p && p.catch) p.catch(() => {});
+        const src = ctx.createBufferSource();           // stiller Puffer entsperrt die Ausgabe zusätzlich
+        src.buffer = ctx.createBuffer(1, 1, 22050);
+        src.connect(ctx.destination);
+        src.start(0);
+      } catch (_) { /* Audio nicht verfügbar: Spiel bleibt stumm spielbar */ }
+    };
+    window.addEventListener('pointerdown', unlock, true);
+    window.addEventListener('pointerup', unlock, true);
+    window.addEventListener('keydown', unlock, true);      // Tastatur-Nutzer
+
+    const tone = (freq, at, dur, { type = 'sine', gain = 0.1, to = null } = {}) => {
+      const t = ctx.currentTime + at;
+      const o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = type;
+      o.frequency.setValueAtTime(freq, t);
+      if (to) o.frequency.exponentialRampToValueAtTime(to, t + dur);
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.exponentialRampToValueAtTime(gain, t + 0.008);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      o.connect(g);
+      g.connect(master);
+      o.start(t);
+      o.stop(t + dur + 0.03);
+    };
+
+    const PENTA = [0, 2, 4, 7, 9];                       // Dur-Pentatonik: klingt immer harmonisch
+    return {
+      setMuted: (m) => { off = m; },
+      grab: () => { if (ready()) tone(520, 0, 0.07, { to: 760, gain: 0.07 }); },
+      snap: () => {
+        if (!ready()) return;
+        tone(200, 0, 0.11, { type: 'triangle', to: 110, gain: 0.16 });
+        tone(900, 0, 0.03, { gain: 0.04 });
+      },
+      clear: (units, streak) => {
+        if (!ready()) return;
+        const base = 523.25 * 2 ** (Math.min((streak - 1) * 2, 10) / 12);   // Serie: höher
+        const n = 3 + Math.min(units - 1, 3);                               // mehr Einheiten: längere Tonfolge
+        for (let i = 0; i < n; i++) {
+          const semis = PENTA[i % 5] + 12 * Math.floor(i / 5);
+          tone(base * 2 ** (semis / 12), 0.04 + i * 0.06, 0.22, { type: 'triangle', gain: 0.09 });
+        }
+      },
+      over: (delay) => {
+        if (!ready()) return;
+        [392, 329.63, 261.63, 196].forEach((f, i) => tone(f, delay + i * 0.2, 0.45, { type: 'triangle', gain: 0.11 }));
+      },
+    };
+  })();
+
+  // ---- Auflöse-Animation: Web Animations API, nur transform/opacity (Compositor) ----
+  const fx = $('fx');
+  const fmt = (n) => String(n).replace('.', ',');
+
+  const popTile = (r, c, cat, geo, delay) => {
+    const el = document.createElement('div');
+    el.className = 'pop';
+    el.style.width = `${geo.cell}px`;
+    el.style.height = `${geo.cell}px`;
+    el.innerHTML = catSvg(cat);
+    fx.appendChild(el);
+    if (!el.animate) { el.remove(); return; }
+    const x = geo.left + c * geo.pitch, y = geo.top + r * geo.pitch;
+    const at = (s) => `translate3d(${x}px,${y}px,0) scale(${s})`;
+    const calm = reduceMotion.matches;                   // gedämpft: nur Überblenden
+    const frames = calm
+      ? [{ transform: at(1), opacity: 1 }, { transform: at(1), opacity: 0 }]
+      : [{ transform: at(1), opacity: 1 }, { transform: at(1.16), opacity: 1, offset: 0.3 }, { transform: at(0.3), opacity: 0 }];
+    const a = el.animate(frames, {
+      duration: calm ? 180 : 420, delay: calm ? 0 : delay, easing: 'cubic-bezier(0.3, 0, 0.2, 1)', fill: 'both',
+    });
+    a.onfinish = () => el.remove();
+  };
+
+  const popScore = (info, cells, geo) => {
+    const half = geo.cell / 2, span = 9 * geo.pitch;
+    let sx = 0, sy = 0;
+    for (const p of cells) { sx += geo.left + p.c * geo.pitch + half; sy += geo.top + p.r * geo.pitch + half; }
+    const x = Math.min(Math.max(sx / cells.length, geo.left + 56), geo.left + span - 56);
+    const y = Math.min(Math.max(sy / cells.length, geo.top + 40), geo.top + span - 40);
+    const n = info.units.total;
+    const lines = [];
+    if (n >= 2) lines.push(n === 2 ? 'Doppel!' : n === 3 ? 'Dreifach!' : 'Mega!');
+    if (info.streak >= 2) lines.push(`Kombo ×${fmt(info.multiplier)}`);
+    const el = document.createElement('div');
+    el.className = 'score-pop';
+    el.innerHTML = `<b>+${info.gained}</b>${lines.map((t) => `<small>${t}</small>`).join('')}`;
+    fx.appendChild(el);
+    if (!el.animate) { el.remove(); return; }
+    const at = (dy, s) => `translate3d(${x}px,${y + dy}px,0) translate(-50%,-50%) scale(${s})`;
+    const calm = reduceMotion.matches;
+    const frames = calm
+      ? [{ transform: at(0, 1), opacity: 0 }, { transform: at(0, 1), opacity: 1, offset: 0.15 },
+         { transform: at(0, 1), opacity: 1, offset: 0.8 }, { transform: at(0, 1), opacity: 0 }]
+      : [{ transform: at(10, 0.7), opacity: 0 }, { transform: at(-4, 1.08), opacity: 1, offset: 0.22 },
+         { transform: at(-14, 1), opacity: 1, offset: 0.7 }, { transform: at(-40, 1), opacity: 0 }];
+    const a = el.animate(frames, { duration: calm ? 900 : 1000, delay: calm ? 0 : 120, easing: 'ease-out', fill: 'both' });
+    a.onfinish = () => el.remove();
+  };
+
+  // Die geleerten Zellen sind im neuen Zustand schon leer: Kachelfarben aus Brett vor dem Zug + gesetztem Stein.
+  const showClear = (piece, a, prevBoard, info, geo) => {
+    const placed = L.placeCells(prevBoard, piece.cells, a.r, a.c, piece.cat);
+    const cells = info.clearedCells
+      .map(([r, c]) => ({ r, c, d: Math.abs(r - a.r) + Math.abs(c - a.c) }))
+      .sort((p, q) => p.d - q.d);                        // von der Ablagestelle nach außen
+    cells.forEach((p, i) => popTile(p.r, p.c, placed[p.r][p.c], geo, Math.min(i * 14, 220)));
+    popScore(info, cells, geo);
+  };
+
+  // ---- Drag & Drop: Pointer Events + Federphysik (schreibt nur transform/opacity) ----
+  const TOUCH_OFFSET = 75;                 // px: Stein schwebt bei Touch über der Fingerspitze
+  const LIFT = { zeta: 1, resp: 0.22 };    // Aufheben: kritisch gedämpft, kein Überschwingen
+  const RETURN_RESP = 0.38;                // Rückflug in den Slot
+  const LAND = { zeta: 1, resp: 0.14 };    // Einrasten nach gültiger Ablage
+  const FLICK_SPEED = 400;                 // px/s: ab hier darf der Rückflug leicht nachfedern
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  const active = new Set();                // alle animierten Floater
+  const lifted = new Map();                // Slot -> Floater (wird gezogen oder fliegt zurück)
+  let drag = null;                         // { f, id, samples }
+  let raf = 0, lastT = 0;
+
+  const ch = (v, to = v) => ({ v, to, vel: 0 });          // Feder-Kanal
+  const clamp01 = (x) => Math.min(1, Math.max(0, x));
+  const atRest = (c, eps, veps) => Math.abs(c.to - c.v) < eps && Math.abs(c.vel) < veps;
+
+  // Gedämpfte Feder: zeta = Dämpfungsgrad, resp = Antwortzeit in s. Startet immer vom aktuellen Wert/Tempo.
+  const spring = (c, dt, zeta, resp) => {
+    const w = 2 * Math.PI / resp, k = w * w, d = 2 * zeta * w;
+    const n = Math.ceil(dt * 240), h = dt / n;
+    for (let i = 0; i < n; i++) {
+      c.vel += (k * (c.to - c.v) - d * c.vel) * h;
+      c.v += c.vel * h;
+    }
+  };
+  const snap = (c) => { c.v = c.to; c.vel = 0; };
+
+  const measureBoard = () => {
+    const a = cellEls[0].getBoundingClientRect(), b = cellEls[1].getBoundingClientRect();
+    return { left: a.left, top: a.top, cell: a.width, pitch: b.left - a.left };
+  };
+
+  const buildFloater = (piece, slot, geo) => {
+    const gap = geo.pitch - geo.cell;
+    const el = document.createElement('div');
+    el.className = 'float';
+    el.style.gridTemplateColumns = `repeat(${piece.w}, ${geo.cell}px)`;
+    el.style.gridTemplateRows = `repeat(${piece.h}, ${geo.cell}px)`;
+    el.style.gap = `${gap}px`;
+    for (const [dr, dc] of piece.cells) {
+      const cell = document.createElement('div');
+      cell.style.gridRow = dr + 1;
+      cell.style.gridColumn = dc + 1;
+      cell.innerHTML = catSvg(piece.cat);
+      el.appendChild(cell);
+    }
+    document.body.appendChild(el);
+    return {
+      el, slot, piece, geo,
+      w: piece.w * geo.cell + (piece.w - 1) * gap,
+      h: piece.h * geo.cell + (piece.h - 1) * gap,
+      x: ch(0), y: ch(0), s: ch(1), off: ch(0), b: ch(0, 1), o: ch(1),
+      s0: 1, px: 0, py: 0, rx: 0, ry: 0, cx: 0, cy: 0,
+      mode: 'drag', zeta: 1, resp: RETURN_RESP, anchor: null, lastO: 1,
+    };
+  };
+
+  // Position im Drag-Modus: Greifpunkt bleibt unter dem Zeiger (1:1), plus Touch-Versatz.
+  const place = (f) => {
+    const fx = f.rx + (f.cx - f.rx) * f.b.v, fy = f.ry + (f.cy - f.ry) * f.b.v;
+    f.x.v = f.px - fx * f.w * f.s.v;
+    f.y.v = f.py + f.off.v - fy * f.h * f.s.v;
+  };
+
+  const paint = (f) => {
+    f.el.style.transform = `translate3d(${f.x.v}px,${f.y.v}px,0) scale(${f.s.v})`;
+    if (f.o.v !== f.lastO) { f.lastO = f.o.v; f.el.style.opacity = f.o.v; }
+  };
+
+  const anchorOf = (f) => {
+    const c = Math.round((f.x.v - f.geo.left) / f.geo.pitch);
+    const r = Math.round((f.y.v - f.geo.top) / f.geo.pitch);
+    return L.canPlace(state.board, f.piece.cells, r, c) ? { r, c } : null;
+  };
+
+  const updateGhost = (f) => {
+    const a = anchorOf(f);
+    if (a ? (hover && hover.r === a.r && hover.c === a.c) : !hover) return;
+    hover = a;
+    if (a) showGhost(f.piece, a.r, a.c, true); else hideGhost();
+  };
+
+  const unlift = (f) => {
+    if (lifted.get(f.slot) !== f) return;
+    lifted.delete(f.slot);
+    const el = trayEl.children[f.slot];
+    if (el) el.classList.remove('lifted');
+  };
+
+  const finish = (f) => {
+    active.delete(f);
+    f.el.remove();
+    unlift(f);
+  };
+
+  const step = (f, dt) => {
+    if (f.mode === 'drag') {
+      spring(f.s, dt, LIFT.zeta, LIFT.resp);
+      spring(f.off, dt, LIFT.zeta, LIFT.resp);
+      spring(f.b, dt, LIFT.zeta, LIFT.resp);
+      place(f);
+      updateGhost(f);
+    } else {
+      spring(f.x, dt, f.zeta, f.resp);   // X und Y getrennt: jede Achse behält ihr eigenes Tempo
+      spring(f.y, dt, f.zeta, f.resp);
+      spring(f.s, dt, f.zeta, f.resp);
+      spring(f.o, dt, 1, LAND.resp);
+      if (atRest(f.x, 0.25, 10) && atRest(f.y, 0.25, 10) && atRest(f.s, 0.002, 0.05) && atRest(f.o, 0.01, 0.1)) {
+        finish(f);
+        return;
+      }
+    }
+    paint(f);
+  };
+
+  const tick = (now) => {
+    raf = 0;
+    const dt = Math.min(Math.max((now - lastT) / 1000, 0), 1 / 30);
+    lastT = now;
+    for (const f of active) step(f, dt);
+    if (active.size) raf = requestAnimationFrame(tick);
+  };
+  const wake = () => {
+    if (raf || !active.size) return;
+    lastT = performance.now();
+    raf = requestAnimationFrame(tick);
+  };
+
+  const releaseVelocity = (samples, now) => {
+    const last = samples[samples.length - 1];
+    if (!last || now - last.t > 80) return [0, 0];             // Zeiger hat vor dem Loslassen pausiert
+    const first = samples.find((p) => last.t - p.t <= 100);
+    const dt = (last.t - first.t) / 1000;
+    if (dt <= 0) return [0, 0];
+    const vx = (last.x - first.x) / dt, vy = (last.y - first.y) / dt;
+    const m = Math.hypot(vx, vy), cap = 4000;
+    return m > cap ? [vx * cap / m, vy * cap / m] : [vx, vy];
+  };
+
+  const startDrag = (slot, btn, e) => {
+    const geo = measureBoard();
+    const offTarget = e.pointerType === 'touch' ? -TOUCH_OFFSET : 0;
+    let f = lifted.get(slot);                    // fliegt der Stein gerade zurück? Dann dort weitermachen.
+    if (!f) {
+      const piece = L.PIECES[state.tray[slot]];
+      f = buildFloater(piece, slot, geo);
+      const mr = btn.querySelector('.piece').getBoundingClientRect();
+      f.s0 = piece.w >= piece.h ? mr.width / f.w : mr.height / f.h;
+      f.x = ch(mr.left); f.y = ch(mr.top); f.s = ch(f.s0, 1);
+      active.add(f);
+      lifted.set(slot, f);
+      btn.classList.add('lifted');
+    }
+    f.geo = geo;
+    f.mode = 'drag';
+    f.px = e.clientX; f.py = e.clientY;
+    f.s.to = 1; f.off.to = offTarget; f.o.to = 1;
+    f.b.v = 0; f.b.vel = 0;
+    // Griffpunkt relativ zum Stein; beim Aufheben gleitet er in den Steinbereich (cx/cy)
+    f.rx = (f.px - f.x.v) / (f.w * f.s.v);
+    f.ry = (f.py + f.off.v - f.y.v) / (f.h * f.s.v);
+    f.cx = clamp01(f.rx); f.cy = clamp01(f.ry);
+    if (reduceMotion.matches) { snap(f.s); snap(f.off); f.b.v = 1; }
+    place(f);
+    paint(f);
+
+    drag = { f, id: e.pointerId, samples: [{ t: e.timeStamp, x: e.clientX, y: e.clientY }] };
+    hover = null;
+    say('');
+    Sound.grab();
+    try { btn.setPointerCapture(e.pointerId); } catch (_) { /* Capture nicht verfügbar */ }
+    window.addEventListener('pointermove', onMove);
+    window.addEventListener('pointerup', onUp);
+    window.addEventListener('pointercancel', onCancel);
+    wake();
+  };
+
+  const stopListening = () => {
+    window.removeEventListener('pointermove', onMove);
+    window.removeEventListener('pointerup', onUp);
+    window.removeEventListener('pointercancel', onCancel);
+  };
+
+  // Zug anwenden (Drag und Tastatur): Zustand, Punkte, Effekte, Sound, Speichern, Neuzeichnen.
+  const commit = (slot, a, geo) => {
+    const piece = L.PIECES[state.tray[slot]];
+    const prevBoard = state.board;
+    const res = L.applyMove(state, slot, a.r, a.c, rng);
+    if (!res.ok) return false;
+    state = res.state;
+    if (state.score > best) {
+      best = state.score;
+      try { localStorage.setItem('meowdoku.best', String(best)); } catch (_) { /* ignorieren */ }
+    }
+    const i = res.info;
+    say(i.units.total > 0
+      ? `+${i.gained} Punkte · ${i.units.total} Einheit(en) aufgelöst · Kombo ×${fmt(i.multiplier)}`
+      : `+${i.gained} Punkte`);
+    Sound.snap();
+    if (i.units.total > 0) {
+      showClear(piece, a, prevBoard, i, geo);
+      Sound.clear(i.units.total, i.streak);
+    }
+    if (state.gameOver) Sound.over(i.units.total > 0 ? 0.4 : 0.15);
+    saveState();
+    hideGhost();
+    render();
+    wake();
+    return true;
+  };
+
+  const endDrag = (cancelled, e) => {
+    const { f, samples } = drag;
+    drag = null;
+    stopListening();
+    place(f);
+    const a = cancelled ? null : anchorOf(f);
+    hover = null;
+
+    if (a) {
+      // Einrasten: Stein gleitet exakt auf die Zielfelder und blendet über den gesetzten Katzen aus
+      f.mode = 'land';
+      f.x.to = f.geo.left + a.c * f.geo.pitch;
+      f.y.to = f.geo.top + a.r * f.geo.pitch;
+      f.s.to = 1; f.o.to = 0;
+      f.zeta = LAND.zeta; f.resp = LAND.resp;
+      if (reduceMotion.matches) { snap(f.x); snap(f.y); snap(f.s); }
+      lifted.delete(f.slot);                 // vor render(): sonst bliebe der neue Vorrats-Slot ausgeblendet
+      commit(f.slot, a, f.geo);
+      return;
+    }
+
+    // Ungültig, außerhalb oder abgebrochen: Feder zurück in den Slot, mit Loslass-Tempo
+    const [vx, vy] = cancelled ? [0, 0] : releaseVelocity(samples, e.timeStamp);
+    const mr = trayEl.children[f.slot].querySelector('.piece').getBoundingClientRect();
+    f.mode = 'return';
+    f.x.to = mr.left; f.y.to = mr.top; f.s.to = f.s0;
+    f.x.vel = vx; f.y.vel = vy;
+    f.zeta = Math.hypot(vx, vy) > FLICK_SPEED ? 0.8 : 1;
+    f.resp = RETURN_RESP;
+    if (reduceMotion.matches) {              // gedämpftes Äquivalent: Überblenden statt Gleiten
+      snap(f.x); snap(f.y); snap(f.s);
+      f.o.to = 0;
+      unlift(f);
+    }
+    hideGhost();
+    wake();
+  };
+
+  const onMove = (e) => {
+    if (!drag || e.pointerId !== drag.id) return;
+    drag.f.px = e.clientX; drag.f.py = e.clientY;
+    drag.samples.push({ t: e.timeStamp, x: e.clientX, y: e.clientY });
+    if (drag.samples.length > 8) drag.samples.shift();
+  };
+  const onUp = (e) => { if (drag && e.pointerId === drag.id) endDrag(false, e); };
+  const onCancel = (e) => { if (drag && e.pointerId === drag.id) endDrag(true, e); };
+
+  trayEl.addEventListener('pointerdown', (e) => {
+    if (drag || state.gameOver || !e.isPrimary || (e.pointerType === 'mouse' && e.button !== 0)) return;
+    const btn = e.target.closest('.slot');
+    if (!btn || btn.disabled) return;
+    e.preventDefault();
+    if (selected !== null) cancelKeyboard(false);
+    startDrag(Number(btn.dataset.slot), btn, e);
+  });
+
+  const abortAll = () => {
+    if (drag) { stopListening(); drag = null; }
+    for (const f of active) f.el.remove();
+    active.clear();
+    lifted.clear();
+    fx.replaceChildren();
+  };
+
+  const restart = () => {
+    abortAll();
+    state = L.createGame(rng);
+    selected = null;
+    cursor = null;
+    hover = null;
+    hideGhost();
+    clearSavedState();
+    say('');
+    render();
+  };
+  $('restart').addEventListener('click', restart);
+  $('over-restart').addEventListener('click', restart);
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    if (!helpEl.hidden) closeHelp();
+    else if (drag) endDrag(true);
+  });
+
+  const muteBtn = $('mute');
+  const renderMute = () => {
+    muteBtn.classList.toggle('is-muted', muted);
+    muteBtn.setAttribute('aria-pressed', String(muted));
+  };
+  muteBtn.addEventListener('click', () => {
+    muted = !muted;
+    Sound.setMuted(muted);
+    try { localStorage.setItem('meowdoku.muted', muted ? '1' : '0'); } catch (_) { /* ignorieren */ }
+    renderMute();
+    Sound.grab();                                        // Rückmeldung beim Einschalten
+  });
+  Sound.setMuted(muted);
+  renderMute();
+
+  // ---- Tastatursteuerung (Barrierefreiheit): Stein wählen, mit Pfeiltasten bewegen, setzen ----
+  let cursor = null;                                     // linke obere Ecke des gewählten Steins
+  const markSelected = () => {
+    [...trayEl.children].forEach((el, slot) => {
+      if (el.disabled) return;
+      const on = slot === selected;
+      el.classList.toggle('selected', on);
+      el.setAttribute('aria-pressed', String(on));
+    });
+  };
+  const keyboardPiece = () => L.PIECES[state.tray[selected]];
+  const showCursor = () => {
+    const piece = keyboardPiece();
+    const ok = L.canPlace(state.board, piece.cells, cursor.r, cursor.c);
+    showGhost(piece, cursor.r, cursor.c, ok);
+    return ok;
+  };
+  const cancelKeyboard = (restoreFocus) => {
+    if (selected === null) return;
+    const slot = selected;
+    selected = null;
+    cursor = null;
+    hideGhost();
+    markSelected();
+    if (restoreFocus && trayEl.children[slot]) trayEl.children[slot].focus();
+  };
+  const selectByKeyboard = (slot) => {
+    cancelKeyboard(false);
+    const piece = L.PIECES[state.tray[slot]];
+    selected = slot;
+    cursor = { r: Math.min(4, N - piece.h), c: Math.min(4, N - piece.w) };
+    markSelected();
+    boardEl.focus({ preventScroll: true });
+    const ok = showCursor();
+    Sound.grab();
+    say(`${piece.name} gewählt. Reihe ${cursor.r + 1}, Spalte ${cursor.c + 1}${ok ? '' : ', belegt'}. Pfeiltasten bewegen, Enter setzt, Escape bricht ab.`);
+  };
+  const placeByKeyboard = () => {
+    const slot = selected, a = cursor;
+    const piece = keyboardPiece();
+    if (!L.canPlace(state.board, piece.cells, a.r, a.c)) { say('Hier passt der Stein nicht.'); return; }
+    selected = null;
+    cursor = null;
+    commit(slot, a, measureBoard());
+    const next = trayEl.querySelector('.slot:not(:disabled)');
+    if (next && !state.gameOver) next.focus();
+  };
+
+  trayEl.addEventListener('click', (e) => {
+    if (e.detail !== 0) return;                          // Maus/Touch laufen über Drag & Drop
+    const btn = e.target.closest('.slot');
+    if (!btn || btn.disabled || state.gameOver || drag) return;
+    const slot = Number(btn.dataset.slot);
+    if (selected === slot) cancelKeyboard(true); else selectByKeyboard(slot);
+  });
+  boardEl.addEventListener('keydown', (e) => {
+    if (selected === null || drag) return;
+    const piece = keyboardPiece();
+    let { r, c } = cursor;
+    switch (e.key) {
+      case 'ArrowUp': r -= 1; break;
+      case 'ArrowDown': r += 1; break;
+      case 'ArrowLeft': c -= 1; break;
+      case 'ArrowRight': c += 1; break;
+      case 'Enter':
+      case ' ':
+        e.preventDefault();
+        if (!e.repeat) placeByKeyboard();                // Tastenwiederholung vom Auswählen ignorieren
+        return;
+      case 'Escape':
+        e.preventDefault();
+        cancelKeyboard(true);
+        return;
+      default: return;
+    }
+    e.preventDefault();
+    cursor = { r: Math.min(Math.max(r, 0), N - piece.h), c: Math.min(Math.max(c, 0), N - piece.w) };
+    const ok = showCursor();
+    say(`Reihe ${cursor.r + 1}, Spalte ${cursor.c + 1}${ok ? '' : ', belegt'}`);
+  });
+  boardEl.addEventListener('blur', () => { if (selected !== null && !drag) cancelKeyboard(false); });
+
+  // ---- Hilfe-Dialog ----
+  const helpEl = $('help-overlay'), helpBtn = $('help'), helpClose = $('help-close');
+  const openHelp = () => { cancelKeyboard(false); helpEl.hidden = false; helpClose.focus(); };
+  const closeHelp = () => { helpEl.hidden = true; helpBtn.focus(); };
+  helpBtn.addEventListener('click', openHelp);
+  helpClose.addEventListener('click', closeHelp);
+  helpEl.addEventListener('click', (e) => { if (e.target === helpEl) closeHelp(); });
+  helpEl.addEventListener('keydown', (e) => { if (e.key === 'Tab') e.preventDefault(); });   // einziges fokussierbares Element
+
+  render();
+})();
+</script>
+</body>
+</html>
